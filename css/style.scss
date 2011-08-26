@@ -1,2 +1,51 @@
 /* CSS Document */
 
+@import "boilerplate";
+
+$background: #009;
+
+body {
+	padding: 0px;
+	margin: 0px;	
+}
+
+header nav ul {
+	position: fixed;
+	width: 100%;
+	height: 100px;
+	top: 0px;
+	left: 0px;
+	
+	li {
+		float: left;
+		padding: 20px;
+		
+		a {
+			color: #fff;
+		}
+	}
+
+}
+
+#main {
+
+.slide {
+	min-height: 100px;
+	min-width: 100%;
+	float:left;
+}
+
+#slide0 {
+	background: adjust-hue($background, 30deg);	
+}
+#slide1 {
+	background: adjust-hue($background, 60deg);	
+}
+#slide2 {
+	background: adjust-hue($background, 90deg);	
+}
+#slide3 {
+	background: adjust-hue($background, 120deg);	
+}
+
+}

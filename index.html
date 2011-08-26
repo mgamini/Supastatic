@@ -21,10 +21,28 @@
 
 <div id="container">
 	<header>
-
+		<nav>
+        	<ul>
+            	<li><a href="#" id="link0">slide0</a></li>
+                <li><a href="#" id="link1">slide1</a></li>
+                <li><a href="#" id="link2">slide2</a></li>
+                <li><a href="#" id="link3">slide3</a></li>
+            </ul>
+        </nav>
 	</header>
 	<div id="main" role="main">
-
+		<div class="slide" id="slide0">
+        	slide0
+        </div>
+        <div class="slide" id="slide1">
+        	slide1
+        </div>
+        <div class="slide" id="slide2">
+        	slide2
+        </div>
+        <div class="slide" id="slide3">
+        	slide3
+        </div>
 	</div>
 	<footer>
 
@@ -37,6 +55,29 @@
 <!-- scripts concatenated and minified via ant build script-->
 <script src="js/plugins.js"></script>
 <script src="js/script.js"></script>
+<script src="js/jquery-ui-1.8.7.custom.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		height = window.innerHeight ? window.innerHeight : $(window).height();
+		$('.slide').css({'height':(height)});
+		$(window).bind('resize', function(){
+            $('.slide') .css({'height': (height) });
+		});
+		
+		function goToByScroll(id){
+	      $('html,body').animate({scrollTop: $(id).offset().top},'slow');
+		}
+		
+		$('nav').find('li a').click(function(){
+			var thisLinksTo = $("#slide" + $(this).attr("id").slice(4));
+			goToByScroll(thisLinksTo);	
+		}); 
+		$('#main').find('.slide').click(function(){
+			goToByScroll("#" + $(this).next().attr("id"));
+		});
+		
+	});
+</script>
 <!-- end scripts-->
 
 <script>
