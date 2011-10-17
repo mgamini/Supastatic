@@ -32,7 +32,7 @@
 	</header>
 	<div id="main" role="main">
 		<div class="slide" id="slide0">
-        	slide0
+        	<img src="images/screenshot.jpg" id="screenshot" />
         </div>
         <div class="slide" id="slide1">
         	slide1
@@ -59,10 +59,13 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		height = window.innerHeight ? window.innerHeight : $(window).height();
+		width = window.innerWidth ? window.innerWidth : $(window).width();
 		$('.slide').css({'height':(height)});
 		$(window).bind('resize', function(){
             $('.slide') .css({'height': (height) });
+            $('#screenshot').css({'width':(width)});
 		});
+		$('#screenshot').css({'width':(width)});
 		
 		function goToByScroll(id){
 	      $('html,body').animate({scrollTop: $(id).offset().top},'slow');

@@ -4,15 +4,22 @@ body {
   padding: 0px;
   margin: 0px; }
 
-header nav ul {
+header nav {
   position: fixed;
   width: 100%;
   height: 100px;
   top: 0px;
-  left: 0px; }
+  left: 0px; 
+  background: url('../images/mockup.png') no-repeat;
+
+}
+
+header nav ul {
+  margin: 80px 500px;
+}
   header nav ul li {
     float: left;
-    padding: 20px; }
+    padding: 0px 20px; }
     header nav ul li a {
       color: #fff; }
 
@@ -21,7 +28,10 @@ header nav ul {
   min-width: 100%;
   float: left; }
 #main #slide0 {
-  background: #4c0099; }
+  background: #4c0099;
+  overflow: hidden;
+  text-align: center;
+   }
 #main #slide1 {
   background: #990099; }
 #main #slide2 {
